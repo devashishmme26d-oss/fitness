@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IronPulse Fitness · Book your free 7-day trial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#17102e;--bg2:#241a46;--ink:#f2efff;--mut:#b9afdc;--hot:#ff4d2e;--sun:#ffd23f;--line:rgba(255,255,255,.16);color-scheme:dark;box-sizing:border-box}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f5f2ff;--bg2:#fff;--ink:#1b1033;--mut:#5b5080;--line:rgba(27,16,51,.16);color-scheme:light}}
+:root[data-theme=dark]{--bg:#17102e;--bg2:#241a46;--ink:#f2efff;--mut:#b9afdc;--line:rgba(255,255,255,.16)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px;height:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 1rem/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden;overflow-wrap:break-word;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.1;margin:0 0 .5em;overflow-wrap:break-word}
+h1{font-size:clamp(2.1rem,9vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.6rem,5.5vw,2.8rem)}
+h3{font-size:1.15rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:80px 0;position:relative}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 10px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav b{font-family:Unbounded,sans-serif;font-size:1rem;white-space:nowrap}
+.btn{display:inline-block;text-decoration:none;text-align:center;border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:1rem;padding:14px 24px;border-radius:999px;background:var(--hot);color:#fff;box-shadow:0 10px 30px -10px var(--hot);transition:translate .2s}
+.btn:hover{translate:0 -2px}
+.btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+nav .btn{padding:9px 16px;font-size:.9rem}
+#hero{min-height:100svh;display:flex;align-items:center;padding-top:100px;perspective:1100px;overflow:hidden}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.lead{color:var(--mut);font-size:1.1rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:var(--mut);font-size:.9rem}
+.facts b{display:block;color:var(--sun);font-family:Unbounded,sans-serif;font-size:1.3rem}
+.stage{display:grid;place-items:center;min-height:360px}
+.rig{position:relative;width:min(64vw,320px);aspect-ratio:1;transform-style:preserve-3d;will-change:transform}
+.plate{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,var(--bg) 0 11%,#4b3a8c 12% 58%,var(--hot) 59% 63%,#4b3a8c 64% 100%);box-shadow:0 0 0 2px rgba(255,255,255,.12)}
+.plate:nth-child(odd){filter:brightness(.82)}
+.plate:last-child{background:radial-gradient(circle,var(--bg) 0 11%,var(--sun) 12% 16%,#6a53c8 17% 58%,var(--hot) 59% 63%,#6a53c8 64% 100%)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.grid3>*,.feats>*,.steps>*{min-width:0}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:26px;transition:rotate .25s,scale .25s}
+.card.pop{border-color:var(--sun);box-shadow:0 0 0 1px var(--sun)}
+.price{font-family:Unbounded,sans-serif;font-size:1.8rem;margin:.2em 0}
+.price small{font-size:.8rem;color:var(--mut);font-family:Manrope}
+.card ul{padding-left:1.1em;margin:0 0 20px;color:var(--mut)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.feat{border-left:4px solid var(--hot);padding:6px 0 6px 16px}
+.feat p{color:var(--mut);margin:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+.step{counter-increment:s;background:var(--bg2);border-radius:22px;padding:26px;border:1px solid var(--line)}
+.step::before{content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--sun);color:#1b1033;font:800 1.1rem Unbounded,sans-serif;margin-bottom:12px}
+form{background:var(--bg2);border:1px solid var(--line);border-radius:26px;padding:clamp(20px,5vw,40px);max-width:640px;margin:0 auto}
+label,legend{display:block;font-weight:700;margin:16px 0 6px;padding:0}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+input[type=text],input[type=tel],select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:13px 14px}
+input:focus,select:focus{border-color:var(--sun);outline:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{margin:0;position:relative}
+.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;padding:9px 16px;border-radius:999px;border:2px solid var(--line);cursor:pointer}
+.chips input:checked+span{background:var(--sun);border-color:var(--sun);color:#1b1033}
+.chips input:focus-visible+span{outline:3px solid var(--sun);outline-offset:2px}
+.err{color:var(--hot);font-weight:700;min-height:1.4em;margin:10px 0 0}
+.ok{text-align:center}
+.hide{display:none!important}
+.ph{background:#ffd23f;color:#1b1033;border-radius:6px;padding:0 6px;font-weight:700}
+footer{padding:30px 20px;text-align:center;color:var(--mut);font-size:.9rem}
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+#bar .btn{flex:1;padding:12px 10px}
+.rv{will-change:transform,opacity}
+@keyframes pop{from{opacity:0;translate:0 60px -300px}}
+.rig{animation:pop 1.2s cubic-bezier(.2,.8,.2,1) both}
+@media(max-width:760px){.hgrid{grid-template-columns:1fr}.stage{min-height:260px}section{padding:56px 0}nav .hide-s{display:none}}
+@media(min-width:900px){#bar{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}.rig{animation:none}html{scroll-behavior:auto}}
+</style></head><body>
+<nav><b class="gym">IronPulse Fitness</b><a class="btn" href="#join">Book free trial</a></nav>
+
+<header id="hero"><div class="wrap hgrid">
+ <div>
+  <h1>Walk in curious. Walk out stronger.</h1>
+  <p class="lead">Try <span class="gym">IronPulse Fitness</span> free for 7 days. Meet a trainer, test every machine, and join a class. No card, no pressure.</p>
+  <div class="cta"><a class="btn" href="#join">Book my free trial</a><a class="btn alt" href="#plans">See membership plans</a></div>
+  <div class="facts"><div><b>7 days</b>free trial</div><div><b>5am–11pm</b>open daily</div><div><b>1:1</b>trainer welcome session</div></div>
+ </div>
+ <div class="stage" aria-hidden="true"><div class="rig" id="rig"></div></div>
+</div></header>
+
+<section id="plans"><div class="wrap">
+ <h2 class="rv">Pick a plan, or start free</h2>
+ <p class="lead rv">Every plan includes the gym floor, group classes and a welcome session. Prices below are samples; replace them with yours.</p>
+ <div class="grid3">
+  <div class="card rv" data-tilt><h3>Free trial</h3><div class="price">₹0 <small>7 days</small></div><ul><li>Full gym access</li><li>One trainer walkthrough</li><li>Try any class</li></ul><button class="btn" data-plan="Free 7-day trial">Start free trial</button></div>
+  <div class="card pop rv" data-tilt><h3>Monthly</h3><div class="price"><span class="ph">₹1,500</span> <small>/ month</small></div><ul><li>Everything in the trial</li><li>Unlimited classes</li><li>Locker and shower</li></ul><button class="btn" data-plan="Monthly">Ask about Monthly</button></div>
+  <div class="card rv" data-tilt><h3>Annual</h3><div class="price"><span class="ph">₹12,000</span> <small>/ year</small></div><ul><li>Two months free</li><li>Free body check each quarter</li><li>Bring a friend for a week</li></ul><button class="btn" data-plan="Annual">Ask about Annual</button></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2 class="rv">Why people stay</h2>
+ <div class="feats">
+  <div class="feat rv"><h3>Coaches who notice</h3><p>Small batches and trainers who fix your form, not just count reps.</p></div>
+  <div class="feat rv"><h3>Classes you'll actually attend</h3><p>Strength, cardio, yoga and beginner batches, all on one timetable.</p></div>
+  <div class="feat rv"><h3>Open when you are</h3><p>Early mornings to late nights, including weekends.</p></div>
+  <div class="feat rv"><h3>Clean, never crowded</h3><p>Machines are sanitised daily and floor capacity is capped at peak hours.</p></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2 class="rv">From first message to first workout</h2>
+ <div class="steps">
+  <div class="step rv"><h3>Send your details</h3><p>Fill in the short form below. It takes about a minute.</p></div>
+  <div class="step rv"><h3>We call you back</h3><p>We confirm a slot that suits you, usually within a few hours.</p></div>
+  <div class="step rv"><h3>Train free for 7 days</h3><p>Meet your trainer, try the floor and decide at your own pace.</p></div>
+ </div>
+</div></section>
+
+<section id="join"><div class="wrap">
+ <h2 class="rv" style="text-align:center">Book your free trial</h2>
+ <p class="lead rv" style="text-align:center;margin-inline:auto">Tell us what you're after. We'll reply on WhatsApp or call.</p>
+ <form id="f" class="rv" novalidate>
+  <label for="nm">Your name</label><input id="nm" type="text" autocomplete="name" placeholder="e.g. Rohit Sharma">
+  <label for="ph">Mobile number</label><input id="ph" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="10-digit number">
+  <fieldset><legend>Your main goal</legend><div class="chips">
+   <label><input type="radio" name="g" value="Lose weight" checked><span>Lose weight</span></label>
+   <label><input type="radio" name="g" value="Build muscle"><span>Build muscle</span></label>
+   <label><input type="radio" name="g" value="Get fitter"><span>Get fitter</span></label>
+   <label><input type="radio" name="g" value="Learn from scratch"><span>New to gyms</span></label>
+  </div></fieldset>
+  <label for="pl">Plan</label><select id="pl"><option>Free 7-day trial</option><option>Monthly</option><option>Annual</option></select>
+  <label for="tm">Best time to visit</label><select id="tm"><option>Morning (5am–10am)</option><option>Afternoon (10am–4pm)</option><option>Evening (4pm–11pm)</option></select>
+  <p class="err" id="err" role="alert"></p>
+  <button class="btn" style="width:100%" type="submit">Send my inquiry</button>
+ </form>
+ <div id="done" class="card ok hide" style="max-width:640px;margin:0 auto">
+  <h3>Thanks, <span id="dn"></span>. Your inquiry is ready.</h3>
+  <p style="margin-inline:auto">Tap below to send it to us on WhatsApp so we can confirm your slot.</p>
+  <a id="wa" class="btn" target="_blank" rel="noopener">Send on WhatsApp</a>
+ </div>
+</div></section>
+
+<footer><span class="gym">IronPulse Fitness</span> · <span class="ph">[address]</span> · <a href="tel:+910000000000" id="tel">Call us</a></footer>
+
+<div id="bar"><a class="btn" href="#join">Book free trial</a><a class="btn alt" id="tel2" href="tel:+910000000000">Call</a></div>
+
+<script>
+/* EDIT THESE: your gym details */
+const GYM="IronPulse Fitness", PHONE="910000000000"; /* country code + number, no + or spaces */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$$(".gym").forEach(e=>e.textContent=GYM);$("#tel").href=$("#tel2").href="tel:+"+PHONE;
+const rig=$("#rig");
+for(let i=0;i<7;i++){const d=document.createElement("div");d.className="plate";d.style.transform=`translateZ(${-i*42}px) scale(${1-i*.03})`;rig.appendChild(d)}
+$$("[data-plan]").forEach(b=>b.onclick=()=>{$("#pl").value=b.dataset.plan;$("#join").scrollIntoView()});
+/* 3D flow: scroll-driven depth for every block, hero weight plates turn as you scroll */
+const rm=matchMedia("(prefers-reduced-motion:reduce)").matches,hero=$("#hero");
+const rv=$$(".rv");rv.forEach(el=>el._d=[...el.parentNode.children].indexOf(el)%2?1:-1);
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),ez=t=>1-Math.pow(1-t,3);
+let tx=0,ty=0,cx=0,cy=0,raf=0;
+function loop(){raf=0;const vh=innerHeight,f=cl(scrollY/vh);cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;
+ rig.style.transform=`translateZ(${-f*120}px) rotateX(${-12-cy*14+f*10}deg) rotateY(${-32+cx*30+f*110}deg)`;
+ hero.style.opacity=1-f*.85;
+ rv.forEach(el=>{const r=el.getBoundingClientRect(),p=(r.top+r.height/2)/vh,t=ez(cl((p-.62)/.38)),u=ez(cl((.18-p)/.3));
+  el.style.transform=`perspective(900px) translate3d(${el._d*t*60}px,${t*60-u*20}px,${-t*260-u*140}px) rotateX(${t*22-u*12}deg) rotateY(${-el._d*t*20}deg)`;
+  el.style.opacity=cl(1-t*1.1-u*.8)});
+ if(Math.abs(tx-cx)>.001||Math.abs(ty-cy)>.001)raf=requestAnimationFrame(loop)}
+const kick=()=>{raf||(raf=requestAnimationFrame(loop))};
+if(!rm){addEventListener("scroll",kick,{passive:true});addEventListener("resize",kick);kick();
+ addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5;kick();
+  const c=e.target.closest&&e.target.closest("[data-tilt]");
+  $$("[data-tilt]").forEach(k=>{if(k===c){const r=k.getBoundingClientRect(),nx=(e.clientX-r.left)/r.width-.5,ny=(e.clientY-r.top)/r.height-.5;k.style.rotate=`${-ny} ${nx} 0 ${Math.hypot(nx,ny)*24}deg`;k.style.scale="1.03"}else{k.style.rotate="";k.style.scale=""}})});
+ addEventListener("deviceorientation",e=>{if(e.gamma==null)return;tx=cl(e.gamma,-30,30)/60;ty=cl((e.beta-45)*.5,-20,20)/40;kick()})}
+/* inquiry form */
+$("#f").addEventListener("submit",e=>{e.preventDefault();
+ const n=$("#nm").value.trim(),p=$("#ph").value.replace(/\D/g,""),er=$("#err");
+ if(n.length<2){er.textContent="Enter your name so we know who to ask for.";$("#nm").focus();return}
+ if(!/^[6-9]\d{9}$/.test(p)){er.textContent="Enter a valid 10-digit mobile number.";$("#ph").focus();return}
+ er.textContent="";
+ const g=document.querySelector("[name=g]:checked").value,pl=$("#pl").value,tm=$("#tm").value;
+ const msg=`Hi ${GYM}, I'm ${n} (${p}). Goal: ${g}. Plan: ${pl}. Best time: ${tm}. Please contact me.`;
+ $("#wa").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg);
+ $("#dn").textContent=n.split(" ")[0];$("#f").classList.add("hide");$("#done").classList.remove("hide");$("#done").scrollIntoView({block:"center"})});
+</script>
+</body></html>
